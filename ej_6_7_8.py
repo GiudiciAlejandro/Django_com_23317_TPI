@@ -81,10 +81,10 @@ rojos"""
 
 
 
-
-class Cuenta:
-    def __init__(self, titular, cantidad=0.0):
-        self.__titular = titular
+class Cuenta(Persona):
+    def __init__(self, nombre, cantidad=0.0):
+        super().__init__(self, nombre)
+        self.__titular = nombre
         self.__cantidad = cantidad
     
     @property
@@ -124,7 +124,12 @@ class Cuenta:
         print("Titular de la cuenta: " , self.__titular)
         print("Saldo: ", self.__cantidad)
 
-
+pers1=Persona("Ale",30,22061)
+titular=pers1.mostrar()
+count=Cuenta(titular,1000)
+count.mostrar
+count.retirar(500)
+count.mostrar
     
 """Vamos a definir ahora una “Cuenta Joven”, para ello vamos a crear una nueva clase 
 CuantaJoven que deriva de la clase creada en el punto 7. Cuando se crea esta nueva clase, 
